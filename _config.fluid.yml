@@ -1,0 +1,13 @@
+
+navbar:
+  blog_title: 无名之辈
+
+index:
+  slogan:
+    enable: true
+    api:
+      enable: true
+      url: "https://v1.hitokoto.cn/"
+      method: "GET"
+      headers: {}
+      keys: ["hitokoto"]
