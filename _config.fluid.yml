@@ -2,7 +2,11 @@
 navbar:
   blog_title: 无名之辈
 
+favicon: /img/logo.png
+apple_touch_icon: /img/logo.png
+
 index:
+  banner_img: /img/banner.png
   slogan:
     enable: true
     api:
@@ -18,6 +22,7 @@ font:
   font_family: JetBrainsMono-LightItalic, Mono
 
 post:
+  banner_img: /img/banner.png
   comments:
     enable: true
     type: giscus
