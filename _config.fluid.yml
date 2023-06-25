@@ -32,7 +32,5 @@ giscus:
   emit-metadata: 1
   # Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme
   theme: light
-  # Available values: en | zh-C
-  lang: zh-cn
-  # Available value: anonymous
-  crossorigin: anonymous
+  # Available values: en | zh-CN
+  lang: zh-CN
