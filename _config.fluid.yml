@@ -12,6 +12,11 @@ index:
       headers: {}
       keys: ["hitokoto"]
 
+custom_css: /css/custom.css
+
+font:
+  font_family: JetBrainsMono-LightItalic, Mono
+
 post:
   comments:
     enable: true
