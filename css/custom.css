@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "Mono";
+    src: format("truetype") url("/font/JetBrainsMono-ExtraBoldItalic.ttf");
+}
+
+@font-face{
+    font-family: 'JetBrainsMono-LightItalic'; 
+    src: url('/font/JetBrainsMono-LightItalic.ttf'); 
+}
+
+
+.markdown-body code, .markdown-body pre {
+    font-family: Mono,monospace !important;
+    font-size: 90% !important;
+}
