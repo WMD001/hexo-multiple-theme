@@ -24,7 +24,7 @@
 <meta property="og:description" content="Pot CClean devtools PowerToys">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-28T16:14:24.000Z">
-<meta property="article:modified_time" content="2023-07-28T08:53:23.035Z">
+<meta property="article:modified_time" content="2023-07-28T09:12:29.546Z">
 <meta property="article:author" content="NoBody">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -200,7 +200,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/windows.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -241,6 +241,49 @@
 
 
   
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"WMD001/wmd001.github.io","repo-id":"R_kgDOJL9sYA","category":"Announcements","category-id":"DIC_kwDOJL9sYM4CXXTa","theme-light":"light","theme-dark":"dark","mapping":"title","reactions-enabled":1,"emit-metadata":1,"input-position":"top","lang":"zh-CN","enable":true,"theme":"light"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
 
 </article>
 
