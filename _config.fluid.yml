@@ -1,6 +1,13 @@
 
 navbar:
   blog_title: 无名之辈
+  menu:
+    - { key: "home", link: "/", icon: "iconfont icon-home-fill" }
+    - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
+    - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
+    - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
+    - { key: "windows", link: "/windows", icon: "iconfont icon-th-large" }
 
 favicon: /img/logo.png
 apple_touch_icon: /img/logo.png
