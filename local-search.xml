@@ -5,8 +5,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="/2023/08/01/hello-world/"/>
-    <url>/2023/08/01/hello-world/</url>
+    <link href="/posts/16107/"/>
+    <url>/posts/16107/</url>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
@@ -18,8 +18,8 @@
   
   <entry>
     <title>linux常用命令</title>
-    <link href="/2023/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <url>/2023/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <link href="/posts/30335/"/>
+    <url>/posts/30335/</url>
     
     <content type="html"><![CDATA[<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">useradd username<br></code></pre></td></tr></table></figure><h2 id="修改用户密码"><a href="#修改用户密码" class="headerlink" title="修改用户密码"></a>修改用户密码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">passwd username<br></code></pre></td></tr></table></figure><h2 id="修改文件夹用户权限"><a href="#修改文件夹用户权限" class="headerlink" title="修改文件夹用户权限"></a>修改文件夹用户权限</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">chown -R username:userGroup dir/<br></code></pre></td></tr></table></figure><h2 id="查看服务器内存"><a href="#查看服务器内存" class="headerlink" title="查看服务器内存"></a>查看服务器内存</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">free -h<br></code></pre></td></tr></table></figure><h2 id="查看服务器磁盘使用"><a href="#查看服务器磁盘使用" class="headerlink" title="查看服务器磁盘使用"></a>查看服务器磁盘使用</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">df -h<br></code></pre></td></tr></table></figure><h2 id="安装zip"><a href="#安装zip" class="headerlink" title="安装zip"></a>安装zip</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum install -y unzip zip<br></code></pre></td></tr></table></figure><h2 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">tar -czvf /path/to/archive.tar.gz /path/to/directory<br></code></pre></td></tr></table></figure><h2 id="解压文件"><a href="#解压文件" class="headerlink" title="解压文件"></a>解压文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">-C 指定解压的目录</span><br>tar -C /extract/to/path -xzvf /path/to/archive.tar.gz<br><br>unzip test.zip<br></code></pre></td></tr></table></figure><p>To be continued</p>]]></content>
     
@@ -37,8 +37,8 @@
   
   <entry>
     <title>springboot打包zip</title>
-    <link href="/2023/07/28/springboot%E6%89%93%E5%8C%85zip/"/>
-    <url>/2023/07/28/springboot%E6%89%93%E5%8C%85zip/</url>
+    <link href="/posts/27600/"/>
+    <url>/posts/27600/</url>
     
     <content type="html"><![CDATA[<h1 id="Spring-boot-打包成zip"><a href="#Spring-boot-打包成zip" class="headerlink" title="Spring boot 打包成zip"></a>Spring boot 打包成zip</h1>]]></content>
     
