@@ -1,7 +1,9 @@
 ---
 title: linux常用命令
+tags:
+  - linux
+abbrlink: 30335
 date: 2023-07-31 16:49:52
-tags: [linux]
 ---
 
 ## 创建用户
