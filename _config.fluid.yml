@@ -24,6 +24,7 @@ index:
       keys: ["hitokoto"]
 
 custom_css: /css/custom.css
+custom_js: /js/custom.js
 
 font:
   font_family: JetBrainsMono-LightItalic, Mono

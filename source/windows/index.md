@@ -5,8 +5,17 @@ banner_img: /img/windows.jpg
 comment: 'giscus'
 ---
 
+!!! note note
+    测试note内容
+
 !!! info "系统工具"
     hahaha
+
+!!! warning warning
+    测试warning内容
+
+!!! error 测试error
+    测试error内容
 
 ## Pot 跨平台翻译
 

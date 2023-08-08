@@ -18,6 +18,10 @@
 
 
 /* hexo-admonition begin */
+:root {
+    --bg-color: "";
+}
+
 .admonition {
     margin: 1.5625em 0;
     padding: .6rem;
@@ -28,7 +32,7 @@
     border-left: .3rem solid #42b983;
     border-radius: .3rem;
     box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
-    background-color: #fafafa;
+    background-color: var(--bg-color);
 }
 
 p.admonition-title {
@@ -41,7 +45,7 @@ p.admonition-title {
 
 .admonition-title::before {
     position: absolute;
-    top: .9rem;
+    top: .6rem;
     left: 1rem;
     width: 12px;
     height: 12px;
@@ -50,16 +54,8 @@ p.admonition-title {
     content: ' ';
 }
 
-@media (var(--color-mode): light){
-    .info>.admonition-title, .todo>.admonition-title {
-        background-color: rgba(0,184,212,.1);
-    }
-}
-
-@media (var(--color-mode): dark){
-    .info>.admonition-title, .todo>.admonition-title {
-        background-color: black;
-    }
+.info>.admonition-title, .todo>.admonition-title {
+    background-color: rgba(0,184,212,.1);
 }
 
 .warning>.admonition-title, .attention>.admonition-title, .caution>.admonition-title {
