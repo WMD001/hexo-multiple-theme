@@ -2,8 +2,11 @@
 title: linux常用命令
 tags:
   - linux
+categories:
+  - linux
 abbrlink: 30335
 date: 2023-07-31 16:49:52
+excerpt: Linux 常用命令 创建用户 修改权限 查看内存 文件解压
 ---
 
 ## 创建用户
