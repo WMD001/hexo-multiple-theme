@@ -7,6 +7,7 @@ categories:
 abbrlink: 30335
 date: 2023-07-31 16:49:52
 excerpt: Linux 常用命令 创建用户 修改权限 查看内存 文件解压
+index_img: /img/cover/linux-common-command.png
 ---
 
 ## 创建用户
