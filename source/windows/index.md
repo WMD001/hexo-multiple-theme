@@ -5,19 +5,12 @@ banner_img: /img/windows.jpg
 comment: 'giscus'
 ---
 
-!!! note note
-    测试note内容
-
-!!! info "系统工具"
-    hahaha
-
-!!! warning warning
-    测试warning内容
-
-!!! error 测试error
-    测试error内容
+!!! info ""
+    个人在windows使用的软件
 
 ## Pot 跨平台翻译
+
+[官网地址](!https://pot-app.com/)
 
 ## CClean
 
@@ -63,3 +56,49 @@ MarkDown 编辑器
 
 gif动图制作
 
+## Bandizip
+
+## 7z
+
+## draw.io
+
+## XMind
+
+## PicGo
+
+## WizTree
+
+## toolbox
+
+## node
+
+## git
+
+## java
+
+## maven
+
+## Axure
+
+## HuoRong
+
+## Sublime Text 3
+
+## IDM
+
+## QQMusic
+
+## WeChat
+
+## WeMeet
+
+## fastgithub
+
+## Clash For Windows
+
+## 向日葵
+
+## ToDesk
+
+## Watt Tookit
+原Steam++，助力访问stream商店，可以在windows store里下载安装
