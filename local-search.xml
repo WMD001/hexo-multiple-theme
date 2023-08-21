@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>python项目离线部署</title>
+    <link href="/posts/38532/"/>
+    <url>/posts/38532/</url>
+    
+    <content type="html"><![CDATA[<div class="admonition warning"><p class="admonition-title">注意</p><p>打包环境的python、pip版本和系统架构应和部署环境保持一致，即在windows上下载的包不能在linux上使用，pip低版本不能使用pip高版本的包。 可以使用<code>pip debug -verbose</code>查看pip安装允许的包后缀类型</p></div><h1 id="venv-虚拟环境"><a href="#venv-虚拟环境" class="headerlink" title="venv 虚拟环境"></a>venv 虚拟环境</h1><p>首先我们需要一个虚拟环境，虚拟环境可以让我们只安装需要的依赖。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python -m venv venv<br></code></pre></td></tr></table></figure><p>如果是使用PyCharm创建的python项目，已经创建好了venv</p><h1 id="requirements-txt"><a href="#requirements-txt" class="headerlink" title="requirements.txt"></a>requirements.txt</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pip freeze &gt; requirements.txt<br></code></pre></td></tr></table></figure><p>将当前python环境的安装包信息保存到requirements.txt文件</p><h1 id="pip-download"><a href="#pip-download" class="headerlink" title="pip download"></a>pip download</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">下载requirements.txt中的依赖包到packages目录下，使用清华镜像</span><br>pip download -d ./packages -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple<br></code></pre></td></tr></table></figure><h1 id="pip-install"><a href="#pip-install" class="headerlink" title="pip install"></a>pip install</h1><p>把packages目录上传到服务器，安装</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pip install -r requirements.txt --no-index -f packages<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>python</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>python部署</tag>
+      
+      <tag>pip使用</tag>
+      
+      <tag>requirements</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/posts/16107/"/>
     <url>/posts/16107/</url>
