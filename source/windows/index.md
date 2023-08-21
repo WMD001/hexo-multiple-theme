@@ -34,8 +34,6 @@ comment: 'giscus'
 
 ftp,sftp 文件传输
 
-# 写作类
-
 ## Gridea
 
 博客生成器
@@ -46,11 +44,13 @@ MarkDown 编辑器
 
 ## Sublime Text 3
 
-文本编辑器
+[Sublime Text3取消自动更新(解决设置update_check后不生效)_a new version of sublime_郭咖啡的博客-CSDN博客](https://blog.csdn.net/qq_34497272/article/details/117413276)
 
 # PDF阅读器
 
 ## BookxNote Pro
+
+PDF阅读器
 
 ## ScreenToGif
 
@@ -58,31 +58,38 @@ gif动图制作
 
 ## Bandizip
 
+文件压缩，解压
+
 ## 7z
 
+文件压缩，解压
+
 ## draw.io
+流程图，画图软件
 
 ## XMind
+思维导图
 
 ## PicGo
-
+图床
 ## WizTree
+磁盘扫描
 
 ## toolbox
-
+jetBrains 软件管理，版本管理
 ## node
+nodejs
 
 ## git
+分布式版本控制系统
 
 ## java
 
 ## maven
 
 ## Axure
-
+原型设计
 ## HuoRong
-
-## Sublime Text 3
 
 ## IDM
 
@@ -93,12 +100,12 @@ gif动图制作
 ## WeMeet
 
 ## fastgithub
-
+加速访问github
 ## Clash For Windows
-
+windows网络代理工具
 ## 向日葵
-
+远程
 ## ToDesk
-
+远程
 ## Watt Tookit
 原Steam++，助力访问stream商店，可以在windows store里下载安装
