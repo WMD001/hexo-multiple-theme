@@ -16,19 +16,21 @@
   <meta name="author" content="NoBody">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Spring boot 打包成zip">
+    <meta name="description" content="使用 maven assembly 插件，将项目打包成zip">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot打包zip">
 <meta property="og:url" content="https://fool-country.online/posts/27600/index.html">
 <meta property="og:site_name" content="NoBody&#39;s Blog">
-<meta property="og:description" content="Spring boot 打包成zip">
+<meta property="og:description" content="使用 maven assembly 插件，将项目打包成zip">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fool-country.online/img/cover/springboot-build-with-assembly.png">
 <meta property="article:published_time" content="2023-07-28T16:46:31.000Z">
-<meta property="article:modified_time" content="2023-08-21T09:35:52.517Z">
+<meta property="article:modified_time" content="2023-08-22T03:05:22.465Z">
 <meta property="article:author" content="NoBody">
 <meta property="article:tag" content="springboot">
 <meta property="article:tag" content="maven-assembly">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fool-country.online/img/cover/springboot-build-with-assembly.png">
   
   
   
@@ -237,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          16 字
+          3.1k 字
         
       </span>
     
@@ -248,7 +250,7 @@
         
         
         
-          1 分钟
+          27 分钟
         
       </span>
     
@@ -291,13 +293,66 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Spring-boot-打包成zip"><a href="#Spring-boot-打包成zip" class="headerlink" title="Spring boot 打包成zip"></a>Spring boot 打包成zip</h1>
+                <h1 id="Spring-boot-打包成zip"><a href="#Spring-boot-打包成zip" class="headerlink" title="Spring boot 打包成zip"></a>Spring boot 打包成zip</h1><p>官方文档：<a target="_blank" rel="noopener" href="https://maven.apache.org/plugins/maven-assembly-plugin/#apache-maven-assembly-plugin">apache-maven-assembly-plugin</a></p>
+<p>assembly 是一个maven插件，可以将项目构建包，依赖，模块，文档以及其它文件合并到一个单文件中。<br>assembly 的配置称为<code>descriptor</code>，按照描述文件的配置工作，可以使用assembly内置的几种配置，处理了许多常用操作，比如打包项目工件以及项目文档到一个zip文件中。或者可以为项目配置自定义的配置来设置在assembly中如何控制依赖，模块和其它文件打包。</p>
+<p>支持的打包类型</p>
+<ul>
+<li>zip</li>
+<li>tar</li>
+<li>tar.gz (or tgz)</li>
+<li>tar.bz2 (or tbz2)</li>
+<li>tar.snappy</li>
+<li>tar.xz (or txz)</li>
+<li>tar.zst (or tzst)</li>
+<li>jar</li>
+<li>dir</li>
+<li>war</li>
+<li>and any other format that the ArchiveManager has been configured for</li>
+</ul>
+<p>要使用assembly插件，如果要使用预定义的配置，需要在<code>&lt;descriptorRefs&gt;&lt;descriptorRefs&gt;</code>参数中设置配置，如果要使用自定义配置，需要在<code>&lt;descriptors&gt;&lt;/descriptors&gt;</code>参数中设置配置文件的路径。</p>
+<p>例如，如果你的项目最终构建是一个<code>jar</code>文件，想要包含所有的项目依赖，可以使用assembly的内置配置，在<code>pom.xml</code>添加插件配置如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-assembly-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.3.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">descriptorRefs</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">descriptorRef</span>&gt;</span>jar-with-dependencies<span class="hljs-tag">&lt;/<span class="hljs-name">descriptorRef</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">descriptorRefs</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>assembly</code>允许一次指定多个<code>descriptorRef</code>，来生成多种类型的组件。<br><code>descriptorRef</code> 可选值有 <code>jar-with-dependencies</code>、<code>bin</code>、<code>src</code>、<code>project</code>，具体文档参考<a target="_blank" rel="noopener" href="https://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html">descriptor-refs</a></p>
+</blockquote>
+<p>或者我们想要创建一个自定义的组装描述文件，可以这样使用：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-assembly-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.3.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">descriptors</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">descriptor</span>&gt;</span>src/assembly/assembly.xml<span class="hljs-tag">&lt;/<span class="hljs-name">descriptor</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">descriptors</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><code>assembly.xml</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">assembly</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://maven.apache.org/ASSEMBLY/2.2.0&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">          <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://maven.apache.org/ASSEMBLY/2.2.0 https://maven.apache.org/xsd/assembly-2.2.0.xsd&quot;</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>make-assembly<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">formats</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">format</span>&gt;</span>zip<span class="hljs-tag">&lt;/<span class="hljs-name">format</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">format</span>&gt;</span>tar.gz<span class="hljs-tag">&lt;/<span class="hljs-name">format</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">formats</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">fileSets</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">fileSet</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">directory</span>&gt;</span>$&#123;project.basedir&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">directory</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">outputDirectory</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">outputDirectory</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">includes</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>README*<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>LICENSE*<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>NOTICE*<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">includes</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">fileSet</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">fileSet</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">directory</span>&gt;</span>$&#123;project.build.directory&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">directory</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">outputDirectory</span>&gt;</span>bin<span class="hljs-tag">&lt;/<span class="hljs-name">outputDirectory</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">includes</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>*.jar<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">includes</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">fileSet</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">fileSets</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">assembly</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>当我们配置好需要的描述文件之后，是时候进行构建了。我们需要将<code>assembly</code>的执行加入到项目的构建周期上，添加以下配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-assembly-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.3.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">descriptors</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">descriptor</span>&gt;</span>src/assembly/assembly.xml<span class="hljs-tag">&lt;/<span class="hljs-name">descriptor</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">descriptors</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">executions</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">execution</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>assembly<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>            <span class="hljs-comment">&lt;!--    绑定到package阶段    --&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">phase</span>&gt;</span>package<span class="hljs-tag">&lt;/<span class="hljs-name">phase</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">goals</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">goal</span>&gt;</span>single<span class="hljs-tag">&lt;/<span class="hljs-name">goal</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">goals</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">execution</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">executions</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>配置好以后，当我们执行 <code>mvn package</code>的时候，assembly 将会在package之后执行，根据<code>assembly.xml</code>中的配置，打包zip和tar.gz文件</p>
+
                 
               </div>
             
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Sprint-Boot/" class="category-chain-item">Sprint Boot</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">
