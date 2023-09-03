@@ -11,6 +11,7 @@ comment: 'giscus'
 ## Pot 跨平台翻译
 
 [官网地址](!https://pot-app.com/)
+配合插件可进行全局划词翻译
 
 ## CClean
 
@@ -21,8 +22,12 @@ comment: 'giscus'
 微软工具
 
 ## Everything
+全文搜索工具
 
 ## PowerToys Everything 插件
+powerToys中使用everything的插件
+
+[GitHub地址](!https://github.com/lin-ycv/EverythingPowerToys)
 
 # 开发工具
 
@@ -57,16 +62,22 @@ MarkDown 编辑器
 gif动图制作
 
 ## Bandizip
+解压缩工具
 
 ## 7z
+解压缩工具，可压缩到更小的体积
 
 ## draw.io
+免费流程图软件
 
 ## XMind
+流程图，思维导图软件
 
 ## PicGo
+图床管理工具
 
 ## WizTree
+磁盘清理工具
 
 ## toolbox
 
@@ -78,11 +89,9 @@ gif动图制作
 
 ## maven
 
-## Axure
+## Axure RP
 
 ## HuoRong
-
-## Sublime Text 3
 
 ## IDM
 
@@ -93,6 +102,8 @@ gif动图制作
 ## WeMeet
 
 ## fastgithub
+github加速
+[GitHub地址](!https://github.com/dotnetcore/FastGithub)
 
 ## Clash For Windows
 
