@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>linux常用命令 | NoBody&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Linux 常用命令 创建用户 修改权限 查看内存 文件解压">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux常用命令">
+<meta property="og:url" content="https://fool-country.online/posts/30335/index.html">
+<meta property="og:site_name" content="NoBody&#39;s Blog">
+<meta property="og:description" content="Linux 常用命令 创建用户 修改权限 查看内存 文件解压">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-31T16:49:52.000Z">
+<meta property="article:modified_time" content="2023-09-22T08:22:08.206Z">
+<meta property="article:author" content="NoBody">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/landscape/atom.xml" title="NoBody's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/landscape/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/landscape/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/landscape/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/landscape/" id="logo">NoBody&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/landscape/" id="subtitle">I&#39;m nobody,who are you</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/landscape/">Home</a>
+        
+          <a class="main-nav-link" href="/landscape/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/landscape/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fool-country.online"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-linux常用命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/landscape/posts/30335/" class="article-date">
+  <time class="dt-published" datetime="2023-07-31T16:49:52.000Z" itemprop="datePublished">2023-07-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/landscape/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      linux常用命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">useradd username<br></code></pre></td></tr></table></figure>
+
+<h2 id="修改用户密码"><a href="#修改用户密码" class="headerlink" title="修改用户密码"></a>修改用户密码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">passwd username<br></code></pre></td></tr></table></figure>
+
+<h2 id="修改文件夹用户权限"><a href="#修改文件夹用户权限" class="headerlink" title="修改文件夹用户权限"></a>修改文件夹用户权限</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">chown -R username:userGroup dir/<br></code></pre></td></tr></table></figure>
+
+<h2 id="查看服务器内存"><a href="#查看服务器内存" class="headerlink" title="查看服务器内存"></a>查看服务器内存</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">free -h<br></code></pre></td></tr></table></figure>
+
+<h2 id="查看服务器磁盘使用"><a href="#查看服务器磁盘使用" class="headerlink" title="查看服务器磁盘使用"></a>查看服务器磁盘使用</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">df -h<br></code></pre></td></tr></table></figure>
+
+<h2 id="安装zip"><a href="#安装zip" class="headerlink" title="安装zip"></a>安装zip</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum install -y unzip zip<br></code></pre></td></tr></table></figure>
+
+<h2 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">tar -czvf /path/to/archive.tar.gz /path/to/directory<br></code></pre></td></tr></table></figure>
+
+<h2 id="解压文件"><a href="#解压文件" class="headerlink" title="解压文件"></a>解压文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">-C 指定解压的目录</span><br>tar -C /extract/to/path -xzvf /path/to/archive.tar.gz<br><br>unzip test.zip<br></code></pre></td></tr></table></figure>
+
+<p>To be continued</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fool-country.online/posts/30335/" data-id="clmuc30o00001enothlp73smr" data-title="linux常用命令" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/landscape/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/landscape/posts/38532/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          python项目离线部署
+        
+      </div>
+    </a>
+  
+  
+    <a href="/landscape/posts/27600/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">springboot打包zip</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/landscape/categories/Sprint-Boot/">Sprint Boot</a></li><li class="category-list-item"><a class="category-list-link" href="/landscape/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/landscape/categories/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/maven-assembly/" rel="tag">maven-assembly</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/pip%E4%BD%BF%E7%94%A8/" rel="tag">pip使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/python%E9%83%A8%E7%BD%B2/" rel="tag">python部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/requirements/" rel="tag">requirements</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/springboot/" rel="tag">springboot</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/landscape/tags/linux/" style="font-size: 10px;">linux</a> <a href="/landscape/tags/maven-assembly/" style="font-size: 10px;">maven-assembly</a> <a href="/landscape/tags/pip%E4%BD%BF%E7%94%A8/" style="font-size: 10px;">pip使用</a> <a href="/landscape/tags/python%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">python部署</a> <a href="/landscape/tags/requirements/" style="font-size: 10px;">requirements</a> <a href="/landscape/tags/springboot/" style="font-size: 10px;">springboot</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/landscape/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/landscape/archives/2023/07/">七月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/landscape/posts/38532/">python项目离线部署</a>
+          </li>
+        
+          <li>
+            <a href="/landscape/posts/30335/">linux常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/landscape/posts/27600/">springboot打包zip</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 NoBody<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/landscape/" class="mobile-nav-link">Home</a>
+  
+    <a href="/landscape/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/landscape/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/landscape/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/landscape/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

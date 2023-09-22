@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>python项目离线部署 | NoBody&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="在离线环境下部署python项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python项目离线部署">
+<meta property="og:url" content="https://fool-country.online/posts/38532/index.html">
+<meta property="og:site_name" content="NoBody&#39;s Blog">
+<meta property="og:description" content="在离线环境下部署python项目">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-21T16:35:47.000Z">
+<meta property="article:modified_time" content="2023-09-22T08:22:08.250Z">
+<meta property="article:author" content="NoBody">
+<meta property="article:tag" content="python部署">
+<meta property="article:tag" content="pip使用">
+<meta property="article:tag" content="requirements">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/landscape/atom.xml" title="NoBody's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/landscape/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/landscape/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/landscape/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/landscape/" id="logo">NoBody&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/landscape/" id="subtitle">I&#39;m nobody,who are you</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/landscape/">Home</a>
+        
+          <a class="main-nav-link" href="/landscape/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/landscape/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fool-country.online"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-python项目离线部署" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/landscape/posts/38532/" class="article-date">
+  <time class="dt-published" datetime="2023-08-21T16:35:47.000Z" itemprop="datePublished">2023-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/landscape/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      python项目离线部署
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <div class="admonition warning"><p class="admonition-title">注意
+</p><p>打包环境的python、pip版本和系统架构应和部署环境保持一致，即在windows上下载的包不能在linux上使用，pip低版本不能使用pip高版本的包。 可以使用<code>pip debug -verbose</code>查看pip安装允许的包后缀类型</p>
+</div>
+
+<h1 id="venv-虚拟环境"><a href="#venv-虚拟环境" class="headerlink" title="venv 虚拟环境"></a>venv 虚拟环境</h1><p>首先我们需要一个虚拟环境，虚拟环境可以让我们只安装需要的依赖。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python <span class="token parameter variable">-m</span> venv venv<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果是使用PyCharm创建的python项目，已经创建好了venv</p>
+<h1 id="requirements-txt"><a href="#requirements-txt" class="headerlink" title="requirements.txt"></a>requirements.txt</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip freeze <span class="token operator">></span> requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>将当前python环境的安装包信息保存到requirements.txt文件</p>
+<h1 id="pip-download"><a href="#pip-download" class="headerlink" title="pip download"></a>pip download</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 下载requirements.txt中的依赖包到packages目录下，使用清华镜像</span>
+pip download <span class="token parameter variable">-d</span> ./packages <span class="token parameter variable">-r</span> requirements.txt <span class="token parameter variable">-i</span> https://pypi.tuna.tsinghua.edu.cn/simple<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h1 id="pip-install"><a href="#pip-install" class="headerlink" title="pip install"></a>pip install</h1><p>把packages目录上传到服务器，安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt --no-index <span class="token parameter variable">-f</span> packages<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fool-country.online/posts/38532/" data-id="clmuc30o30003enotgcg8hj3f" data-title="python项目离线部署" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/landscape/tags/pip%E4%BD%BF%E7%94%A8/" rel="tag">pip使用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/landscape/tags/python%E9%83%A8%E7%BD%B2/" rel="tag">python部署</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/landscape/tags/requirements/" rel="tag">requirements</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/landscape/posts/30335/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">linux常用命令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/landscape/categories/Sprint-Boot/">Sprint Boot</a></li><li class="category-list-item"><a class="category-list-link" href="/landscape/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/landscape/categories/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/maven-assembly/" rel="tag">maven-assembly</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/pip%E4%BD%BF%E7%94%A8/" rel="tag">pip使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/python%E9%83%A8%E7%BD%B2/" rel="tag">python部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/requirements/" rel="tag">requirements</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/springboot/" rel="tag">springboot</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/landscape/tags/linux/" style="font-size: 10px;">linux</a> <a href="/landscape/tags/maven-assembly/" style="font-size: 10px;">maven-assembly</a> <a href="/landscape/tags/pip%E4%BD%BF%E7%94%A8/" style="font-size: 10px;">pip使用</a> <a href="/landscape/tags/python%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">python部署</a> <a href="/landscape/tags/requirements/" style="font-size: 10px;">requirements</a> <a href="/landscape/tags/springboot/" style="font-size: 10px;">springboot</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/landscape/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/landscape/archives/2023/07/">七月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/landscape/posts/38532/">python项目离线部署</a>
+          </li>
+        
+          <li>
+            <a href="/landscape/posts/30335/">linux常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/landscape/posts/27600/">springboot打包zip</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 NoBody<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/landscape/" class="mobile-nav-link">Home</a>
+  
+    <a href="/landscape/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/landscape/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/landscape/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/landscape/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
