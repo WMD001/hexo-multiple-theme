@@ -29,6 +29,8 @@ jobs:
         run: npm run clean
       - name: Build
         run: npm run build
+      - name: Build:landscape
+        run: npm run build:landscape
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
