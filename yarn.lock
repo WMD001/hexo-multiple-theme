@@ -745,6 +745,11 @@ hexo-theme-stellar@^1.19.0:
     hexo-renderer-ejs "^2.0.0"
     hexo-renderer-stylus "^2.1.0"
 
+hexo-theme-webstack@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npmmirror.com/hexo-theme-webstack/-/hexo-theme-webstack-2.1.1.tgz"
+  integrity sha512-6myH/tjHm5Ofanf1m182KZ0KbUHuwwo+NRpYXX/kCXlY4731LB///rfni9bx+Uulk9/1RwbaJeXTGyJZdN36xA==
+
 hexo-util@^2.0.0, hexo-util@^2.7.0:
   version "2.7.0"
   resolved "https://registry.npmmirror.com/hexo-util/-/hexo-util-2.7.0.tgz"

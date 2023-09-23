@@ -5,6 +5,8 @@
   "scripts": {
     "build": "hexo generate",
     "build:landscape": "hexo generate --config _config.landscape.yml",
+    "build:stellar": "hexo generate --config _config.stellar.yml",
+    "build:webstack": "hexo generate --config _config.webstack.yml",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
@@ -26,6 +28,7 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-fluid": "^1.9.4",
     "hexo-theme-landscape": "^0.0.3",
-    "hexo-theme-stellar": "^1.19.0"
+    "hexo-theme-stellar": "^1.19.0",
+    "hexo-theme-webstack": "^2.1.1"
   }
 }
