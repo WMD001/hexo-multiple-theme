@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "hexo generate",
+    "build:all": "hexo generate && hexo generate --config _config.landscape.yml && hexo generate --config _config.stellar.yml && hexo generate --config _config.webstack.yml",
     "build:landscape": "hexo generate --config _config.landscape.yml",
     "build:stellar": "hexo generate --config _config.stellar.yml",
     "build:webstack": "hexo generate --config _config.webstack.yml",

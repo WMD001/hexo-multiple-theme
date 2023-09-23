@@ -27,10 +27,8 @@ jobs:
         run: npm install
       - name: Clean cache
         run: npm run clean
-      - name: Build
-        run: npm run build
-      - name: Build:landscape
-        run: npm run build:landscape
+      - name: Build:all
+        run: npm run build:all
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
