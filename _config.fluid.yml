@@ -27,9 +27,10 @@ index:
 
 custom_css: /css/custom.css
 custom_js: /js/custom.js
+custom_head: <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
 
 font:
-  font_family: JetBrainsMono-LightItalic, Mono
+  font_family: JetBrainsMono-SemiBoldItalic, "LXGW WenKai Screen", sans-serif
 
 #---------------------------
 # 归档页

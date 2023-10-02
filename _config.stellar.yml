@@ -105,3 +105,13 @@ theme: stellar
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+
+# Font Style
+inject:
+  head:
+    - <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+
+style:
+  font-family:
+    body: '"LXGW WenKai Screen", sans-serif'
