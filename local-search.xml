@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>搭建自己的chatgpt网页版</title>
+    <link href="/posts/60861/"/>
+    <url>/posts/60861/</url>
+    
+    <content type="html"><![CDATA[<p class="note note-primary">PS: 如果想不使用科学上网就可以访问到需要有国内域名</p><h1 id="申请OpenAI账号"><a href="#申请OpenAI账号" class="headerlink" title="申请OpenAI账号"></a>申请OpenAI账号</h1><p>要申请OpenAI账号，您需要按照以下步骤进行操作：</p><ol><li>首先，您需要科学上网以便访问OpenAI的官方网站。</li><li>准备一个Gmail或Outlook账号，用于注册OpenAI账号。</li><li>在注册过程中，您将需要进行手机短信验证码验证。您可以使用接码平台<a href="https://sms-activate.org/">sms-activate</a>来获取验证码。</li><li>完成账号注册后，您就可以免费使用ChatGPT 3.5进行对话了。请注意，使用ChatGPT 3.5需要一直保持科学上网。</li></ol><h1 id="Vercel部署"><a href="#Vercel部署" class="headerlink" title="Vercel部署"></a>Vercel部署</h1><h2 id="ChatGPT-Next-Web"><a href="#ChatGPT-Next-Web" class="headerlink" title="ChatGPT-Next-Web"></a>ChatGPT-Next-Web</h2><p>您可以使用<a href="https://github.com/Yidadaa/ChatGPT-Next-Web">ChatGPT-Next-Web</a>来进行Vercel部署。按照以下步骤操作：</p><ol><li>首先，前往<a href="https://github.com/Yidadaa/ChatGPT-Next-Web#get-started">这个链接</a>获取如何使用ChatGPT-Next-Web的详细说明。</li><li>在部署时，您需要设置两个环境变量。第一个是<code>OPENAI_API_KEY</code>，您可以在<a href="https://platform.openai.com/account/api-keys">OpenAI官方网站</a>获取该API密钥。第二个是<code>CODE</code>，这是页面上设置的登录码。只有在输入正确的登录码后，才能进行请求。这是为了防止过度请求<code>tokens</code>。</li></ol><h1 id="设置域名"><a href="#设置域名" class="headerlink" title="设置域名"></a>设置域名</h1><p>目前Vercel部署后的域名不能直接连接，但如果您拥有自己的域名，您可以通过配置域名来使用自己的域名进行访问。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>ChatGpt</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ChatGpt</tag>
+      
+      <tag>ChatGpt-nex-web</tag>
+      
+      <tag>Vercel</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>python项目离线部署</title>
     <link href="/posts/38532/"/>
     <url>/posts/38532/</url>

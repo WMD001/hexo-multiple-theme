@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>搭建自己的chatgpt网页版 | NoBody&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="使用vercel部署一个属于自己的ChatGpt网站">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建自己的chatgpt网页版">
+<meta property="og:url" content="https://fool-country.online/posts/60861/index.html">
+<meta property="og:site_name" content="NoBody&#39;s Blog">
+<meta property="og:description" content="使用vercel部署一个属于自己的ChatGpt网站">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-12T20:46:59.000Z">
+<meta property="article:modified_time" content="2023-11-12T13:14:21.199Z">
+<meta property="article:author" content="NoBody">
+<meta property="article:tag" content="ChatGpt">
+<meta property="article:tag" content="ChatGpt-nex-web">
+<meta property="article:tag" content="Vercel">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/landscape/atom.xml" title="NoBody's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/landscape/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/landscape/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/landscape/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/landscape/" id="logo">NoBody&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/landscape/" id="subtitle">I&#39;m nobody,who are you</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/landscape/">Home</a>
+        
+          <a class="main-nav-link" href="/landscape/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/landscape/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fool-country.online"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-搭建自己的chatgpt网页版" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/landscape/posts/60861/" class="article-date">
+  <time class="dt-published" datetime="2023-11-12T20:46:59.000Z" itemprop="datePublished">2023-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/landscape/categories/ChatGpt/">ChatGpt</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      搭建自己的chatgpt网页版
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p class="note note-primary">
+PS: 如果想不使用科学上网就可以访问到需要有国内域名
+</p>
+
+<h1 id="申请OpenAI账号"><a href="#申请OpenAI账号" class="headerlink" title="申请OpenAI账号"></a>申请OpenAI账号</h1><p>要申请OpenAI账号，您需要按照以下步骤进行操作：</p>
+<ol>
+<li>首先，您需要科学上网以便访问OpenAI的官方网站。</li>
+<li>准备一个Gmail或Outlook账号，用于注册OpenAI账号。</li>
+<li>在注册过程中，您将需要进行手机短信验证码验证。您可以使用接码平台<a target="_blank" rel="noopener" href="https://sms-activate.org/">sms-activate</a>来获取验证码。</li>
+<li>完成账号注册后，您就可以免费使用ChatGPT 3.5进行对话了。请注意，使用ChatGPT 3.5需要一直保持科学上网。</li>
+</ol>
+<h1 id="Vercel部署"><a href="#Vercel部署" class="headerlink" title="Vercel部署"></a>Vercel部署</h1><h2 id="ChatGPT-Next-Web"><a href="#ChatGPT-Next-Web" class="headerlink" title="ChatGPT-Next-Web"></a>ChatGPT-Next-Web</h2><p>您可以使用<a target="_blank" rel="noopener" href="https://github.com/Yidadaa/ChatGPT-Next-Web">ChatGPT-Next-Web</a>来进行Vercel部署。按照以下步骤操作：</p>
+<ol>
+<li>首先，前往<a target="_blank" rel="noopener" href="https://github.com/Yidadaa/ChatGPT-Next-Web#get-started">这个链接</a>获取如何使用ChatGPT-Next-Web的详细说明。</li>
+<li>在部署时，您需要设置两个环境变量。第一个是<code>OPENAI_API_KEY</code>，您可以在<a target="_blank" rel="noopener" href="https://platform.openai.com/account/api-keys">OpenAI官方网站</a>获取该API密钥。第二个是<code>CODE</code>，这是页面上设置的登录码。只有在输入正确的登录码后，才能进行请求。这是为了防止过度请求<code>tokens</code>。</li>
+</ol>
+<h1 id="设置域名"><a href="#设置域名" class="headerlink" title="设置域名"></a>设置域名</h1><p>目前Vercel部署后的域名不能直接连接，但如果您拥有自己的域名，您可以通过配置域名来使用自己的域名进行访问。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fool-country.online/posts/60861/" data-id="clovhza0z0009fsothec2anff" data-title="搭建自己的chatgpt网页版" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/landscape/tags/ChatGpt/" rel="tag">ChatGpt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/landscape/tags/ChatGpt-nex-web/" rel="tag">ChatGpt-nex-web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/landscape/tags/Vercel/" rel="tag">Vercel</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/landscape/posts/38532/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">python项目离线部署</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/landscape/categories/ChatGpt/">ChatGpt</a></li><li class="category-list-item"><a class="category-list-link" href="/landscape/categories/Sprint-Boot/">Sprint Boot</a></li><li class="category-list-item"><a class="category-list-link" href="/landscape/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/landscape/categories/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/ChatGpt/" rel="tag">ChatGpt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/ChatGpt-nex-web/" rel="tag">ChatGpt-nex-web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/Vercel/" rel="tag">Vercel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/maven-assembly/" rel="tag">maven-assembly</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/pip%E4%BD%BF%E7%94%A8/" rel="tag">pip使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/python%E9%83%A8%E7%BD%B2/" rel="tag">python部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/requirements/" rel="tag">requirements</a></li><li class="tag-list-item"><a class="tag-list-link" href="/landscape/tags/springboot/" rel="tag">springboot</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/landscape/tags/ChatGpt/" style="font-size: 10px;">ChatGpt</a> <a href="/landscape/tags/ChatGpt-nex-web/" style="font-size: 10px;">ChatGpt-nex-web</a> <a href="/landscape/tags/Vercel/" style="font-size: 10px;">Vercel</a> <a href="/landscape/tags/linux/" style="font-size: 10px;">linux</a> <a href="/landscape/tags/maven-assembly/" style="font-size: 10px;">maven-assembly</a> <a href="/landscape/tags/pip%E4%BD%BF%E7%94%A8/" style="font-size: 10px;">pip使用</a> <a href="/landscape/tags/python%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">python部署</a> <a href="/landscape/tags/requirements/" style="font-size: 10px;">requirements</a> <a href="/landscape/tags/springboot/" style="font-size: 10px;">springboot</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/landscape/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/landscape/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/landscape/archives/2023/07/">七月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/landscape/posts/60861/">搭建自己的chatgpt网页版</a>
+          </li>
+        
+          <li>
+            <a href="/landscape/posts/38532/">python项目离线部署</a>
+          </li>
+        
+          <li>
+            <a href="/landscape/posts/30335/">linux常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/landscape/posts/27600/">springboot打包zip</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 NoBody<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/landscape/" class="mobile-nav-link">Home</a>
+  
+    <a href="/landscape/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/landscape/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/landscape/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/landscape/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
