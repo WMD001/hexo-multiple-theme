@@ -15,3 +15,11 @@ Stellar:
     data-repo: xaoxuu/hexo-theme-stellar
     data-mapping: number
     data-term: 226
+
+docker:
+  name: docker常用命令
+  title: docker常用命令
+  subtitle: 'docker 使用'
+  tags: docker
+  cover: false
+  description: 记录docker使用的常用命令
