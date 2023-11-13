@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>hexo多主题构建</title>
+    <link href="/posts/2265/"/>
+    <url>/posts/2265/</url>
+    
+    <content type="html"><![CDATA[<h1 id="创建hexo项目"><a href="#创建hexo项目" class="headerlink" title="创建hexo项目"></a>创建hexo项目</h1><p>首先，我们需要先创建一个hexo项目，hexo中默认的主题是<code>landscape</code>。</p><h1 id="引入第二个主题"><a href="#引入第二个主题" class="headerlink" title="引入第二个主题"></a>引入第二个主题</h1><p>复制<code>_config.yml</code>文件，修改文件名称为<code>_config.theme.yml</code>，然后在文件中添加对应的主题配置</p><h1 id="hexo-generate"><a href="#hexo-generate" class="headerlink" title="hexo generate"></a>hexo generate</h1><p>生成时，使用generate的<code>--config</code>参数生成对应主题配置的静态资源。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo generate &amp;&amp; hexo generate --config _config.theme.yml<br></code></pre></td></tr></table></figure><p>这样生成的静态资源在public目录下，还会有一个theme目录，既是第二个主题的目录，部署后可以通过<code>主站地址/theme</code>进行访问</p><h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>现在的博客页主题使用<a href="https://github.com/fluid-dev/hexo-theme-fluid">fluid</a>，wiki菜单使用的主题是<a href="https://github.com/xaoxuu/hexo-theme-stellar">stellar</a>，网址导航使用的主题是<a href="https://github.com/HCLonely/hexo-theme-webstack/">webstack</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+      <tag>多主题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>搭建自己的chatgpt网页版</title>
     <link href="/posts/60861/"/>
     <url>/posts/60861/</url>
