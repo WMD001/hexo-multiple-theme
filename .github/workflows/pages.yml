@@ -29,6 +29,8 @@ jobs:
         run: npm run clean
       - name: Build:all
         run: npm run build:all
+      - name: config wiki
+        run: mv ./public/stellar/wiki/ ./public/wiki/ && rm -r ./public/stellar
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
