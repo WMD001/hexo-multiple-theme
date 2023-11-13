@@ -20,14 +20,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>项目 - NoBody's Blog</title>
+  <title>docker常用命令：镜像相关 - NoBody's Blog</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="项目">
-<meta property="og:url" content="https://wmd001.top/wiki/wiki/index.html">
+    <meta name="description" content="docker images列出本地镜像列表，返回项：  REPOSITORY：表示镜像的仓库源 TAG：镜像的标签 IMAGE ID：镜像的ID CREATED：镜像的创建时间 SIZE：镜像的大小  docker search例如 docker search nginx , 从 Docker Hub 网站来搜索镜像，返回项：  NAME：镜像仓库源的名称 DESCRIPTION：镜像的描述 OF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="镜像相关">
+<meta property="og:url" content="https://wmd001.top/wiki/wiki/docker/index.html">
 <meta property="og:site_name" content="NoBody&#39;s Blog">
+<meta property="og:description" content="docker images列出本地镜像列表，返回项：  REPOSITORY：表示镜像的仓库源 TAG：镜像的标签 IMAGE ID：镜像的ID CREATED：镜像的创建时间 SIZE：镜像的大小  docker search例如 docker search nginx , 从 Docker Hub 网站来搜索镜像，返回项：  NAME：镜像仓库源的名称 DESCRIPTION：镜像的描述 OF">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-13T09:12:13.058Z">
+<meta property="article:modified_time" content="2023-11-13T09:12:13.058Z">
 <meta property="article:author" content="NoBody">
 <meta name="twitter:card" content="summary">
   
@@ -62,48 +66,85 @@
   
 
 
+
+
   <div class='l_body' id='start'>
-    <aside class='l_left' layout='wiki_index'>
+    <aside class='l_left' layout='wiki'>
     
 
   
 
-<header class="header"><div class="logo-wrap"><a class="title" href="/stellar/"><div class="main" ff="title">NoBody's Blog</div><div class="sub cap">I'm nobody,who are you</div></a></div>
-
-<nav class="menu dis-select"></nav>
-</header>
 
 
-<div class="widgets">
-<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/wiki/" placeholder="文档搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+<div class="widgets"><widget class="widget-wrapper logo-wrap wiki"><div class="widget-body"><a style="filter: grayscale(100%)" class="wiki-home cap" href="/stellar/"><svg aria-hidden="true" viewBox="0 0 16 16" width="1rem" height="1rem" fill="currentColor"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"></path></svg>所有项目</a><a class="title" href="/stellar/wiki/docker/index.html"><div class="main" ff="title">docker常用命令</div><div class="sub cap">docker 使用</div></a></div></widget>
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/wiki/docker/" placeholder="在 /wiki/docker/ 中搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+
+
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">镜像相关</span></div><div class="widget-body fs14"><div class="doc-tree active"><a class="doc-tree-link active" href="/stellar/wiki/docker/index.html#start"><span class="toc-text">镜像相关</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-images"><span class="toc-text">docker images</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-search"><span class="toc-text">docker search</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-pull"><span class="toc-text">docker pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-rmi"><span class="toc-text">docker rmi</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-commit"><span class="toc-text">docker commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-build"><span class="toc-text">docker build</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-tag"><span class="toc-text">docker tag</span></a></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/stellar/wiki/docker/contain.html"><span class="toc-text">容器相关</span></a></div></div></widget>
+
+
 
 
 </div>
 
 
     </aside>
-    <div class='l_main list'>
+    <div class='l_main'>
       
-  
-
-<header class="header mobile-only"><div class="logo-wrap"><a class="title" href="/stellar/"><div class="main" ff="title">NoBody's Blog</div><div class="sub cap">I'm nobody,who are you</div></a></div></header>
-
-
 
       
 
   
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/stellar/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/stellar/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/stellar/wiki/docker/index.html">docker常用命令</a></div><div id="post-meta">更新于&nbsp;<time datetime="2023-11-13T09:12:13.058Z">2023-11-13</time></div></div>
 
+  <article class='md-text content wiki'>
+  <h1 class="article-title"><span>镜像相关</span></h1>
+  <h2 id="docker-images"><a href="#docker-images" class="headerlink" title="docker images"></a><strong>docker images</strong></h2><p>列出本地镜像列表，返回项：</p>
+<ul>
+<li>REPOSITORY：表示镜像的仓库源</li>
+<li>TAG：镜像的标签</li>
+<li>IMAGE ID：镜像的ID</li>
+<li>CREATED：镜像的创建时间</li>
+<li>SIZE：镜像的大小</li>
+</ul>
+<h2 id="docker-search"><a href="#docker-search" class="headerlink" title="docker search"></a><strong>docker search</strong></h2><p>例如 <code>docker search nginx</code> , 从 Docker Hub 网站来搜索镜像，返回项：</p>
+<ul>
+<li>NAME：镜像仓库源的名称</li>
+<li>DESCRIPTION：镜像的描述</li>
+<li>OFFICIAL：镜像是否是官方的</li>
+<li>STARTS：类似Github里的star</li>
+<li>AUTOMATED：镜像是否自动构建</li>
+</ul>
+<h2 id="docker-pull"><a href="#docker-pull" class="headerlink" title="docker pull"></a><strong>docker pull</strong></h2><p>拉取镜像，将镜像拉取到本地，例如 <code>docker pull nginx</code>，可以将最新的nginx镜像拉取到本地，拉取之后使用 <code>docker images</code> 查看本地镜像</p>
+<h2 id="docker-rmi"><a href="#docker-rmi" class="headerlink" title="docker rmi"></a><strong>docker rmi</strong></h2><p>删除本地镜像，例如 <code>docker rmi nginx</code>，删除后 <code>docker images</code> 将看不到</p>
+<h2 id="docker-commit"><a href="#docker-commit" class="headerlink" title="docker commit"></a><strong>docker commit</strong></h2><p>对容器进行操作后可以使用 commit 提交容器副本到本地镜像，例如 <code>docker commit -m &quot;update&quot; -a=&quot;runoob&quot; e21dec runoob/ubuntu:v2 </code></p>
+<ul>
+<li>-m : 提交的描述信息</li>
+<li>-a : 执行镜像作者</li>
+<li>e21dec : 容器ID</li>
+<li>runoob&#x2F;ubuntu:v2 : 指定要创建的目标镜像名<br>commit 完成后，可以使用 <code>docker images</code> 查看新镜像</li>
+</ul>
+<h2 id="docker-build"><a href="#docker-build" class="headerlink" title="docker build"></a><strong>docker build</strong></h2><p>使用build命令可以从零构建一个新的镜像。首先，我们需要一个<a href="#DockerFile">DockerFile</a>文件</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker"><span class="token instruction"><span class="token keyword">FROM</span> openjdk:8-jre</span>
+<span class="token instruction"><span class="token keyword">ADD</span> target/eureka.jar eureka.jar</span>
+<span class="token instruction"><span class="token keyword">EXPOSE</span> 8010</span>
+<span class="token instruction"><span class="token keyword">CMD</span> java -jar eureka.jar</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后，我们使用DockerFile文件，通过 docker build 命令来构建一个镜像<br><code>docker build -t eureka:1.0 .</code><br>-t : 指定要创建的目标镜像名<br>. : DockerFile文件所在的目录</p>
+<h2 id="docker-tag"><a href="#docker-tag" class="headerlink" title="docker tag"></a><strong>docker tag</strong></h2><p>使用 docker tag 为镜像添加一个新的标签，用法是： <code>docker tag 镜像id/镜像名称 镜像源名:新标签</code>，例如：<code>docker tag nginx nginx:dev</code><br>将会给nginx镜像再打一下 dev 的标签，使用docker images 可以看到两个不同标签的镜像</p>
 
   
+  
 
-<div class="nav-wrap"><nav class="sub wiki cap"><a class="active" href="/stellar/wiki/">所有项目</a></a><a href="/stellar/wiki/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/index.html">博客主题</a></a><a href="/stellar/wiki/tags/docker/index.html">docker</a></a></nav></div>
 
-  <div class="post-list wiki"><a class="post-card wiki " href="/stellar/wiki/stellar/index.html">
-<article class="md-text"><div class="excerpt"><div class="cap breadcrumb">博客主题</div><h2 class="post-title">Stellar - 每个人的独立博客</h2><p>Stellar 是一个内置 wiki 系统的 hexo 主题，适合综合型站点使用。同时也拥有简约而精美的视觉设计和丰富的标签插件，帮助您简单从容地应对各种场合。</p></div></article>
-</a></div><div class="post-list wiki"><a class="post-card wiki " href="/stellar/wiki/docker/index.html">
-<article class="md-text"><div class="excerpt"><div class="cap breadcrumb">docker</div><h2 class="post-title">docker常用命令</h2><p>记录docker使用的常用命令</p></div></article>
-</a></div>
+  </article>
+  
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/stellar/wiki/docker/contain.html">容器相关</a></div></section></div>
+
+  
 
 
 
