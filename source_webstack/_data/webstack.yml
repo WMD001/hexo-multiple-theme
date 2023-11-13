@@ -53,10 +53,6 @@ Utilities:
     url: https://tool.lu/audiocutter/
     img: https://tool.lu/favicon.ico
     description: 在线工具合集，除了音频剪切之外还有其他的工具
-  - name: github下载加速
-    url: https://doget.nocsdn.com/#/
-    img: https://doget.nocsdn.com/icons/favicon-128x128.png
-    description: github资源下载加速
   - name: 在线cron表达式生成
     url: https://www.aconvert.com/favicon.ico
     img: https://www.matools.com/static/img/common/matools-favicon.png
