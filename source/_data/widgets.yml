@@ -1,0 +1,7 @@
+search_docs:
+  layout: search
+  filter: /wiki/
+  placeholder: 文档搜索
+
+
+

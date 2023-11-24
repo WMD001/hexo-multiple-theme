@@ -1,7 +1,0 @@
-search_docs:
-  layout: search
-  filter: /wiki/
-  placeholder: 文档搜索
-
-recent: # 置空取消最近组件
-
